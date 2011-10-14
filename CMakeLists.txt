@@ -356,7 +356,7 @@ endif ()
 # Point TOLUAPP vars to location of embedded lib if using that option
 if (CEGUI_BUILD_EMBEDDED_TOLUAPP)
     set (TOLUAPP_LIBRARIES ${CEGUI_TOLUAPP_LIBNAME})
-    set (TOLUAPP_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/cegui/include/ScriptingModules/LuaScriptModule/support/tolua++)
+    set (TOLUAPP_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/cegui/include/CEGUI/ScriptModules/Lua/support/tolua++)
 endif()
 
 # set up install sub-directories
@@ -390,8 +390,8 @@ endif()
 ################################################################################
 # Deal with files we generate from template files
 ################################################################################
-configure_file( cegui/include/CEGUIVersion.h.in cegui/include/CEGUIVersion.h )
-configure_file( cegui/include/CEGUIConfig.h.in cegui/include/CEGUIConfig.h )
+configure_file( cegui/include/CEGUI/Version.h.in cegui/include/CEGUI/Version.h )
+configure_file( cegui/include/CEGUI/Config.h.in cegui/include/CEGUI/Config.h )
 configure_file( Samples/common/include/CEGUISamplesConfig.h.in Samples/common/include/CEGUISamplesConfig.h )
 
 if (UNIX AND NOT APPLE)
@@ -424,7 +424,7 @@ add_subdirectory(cegui/src/RendererModules)
 add_subdirectory(cegui/src/XMLParserModules)
 add_subdirectory(cegui/src/ImageCodecModules)
 add_subdirectory(cegui/src/WindowRendererSets)
-add_subdirectory(cegui/src/ScriptingModules)
+add_subdirectory(cegui/src/ScriptModules)
 
 if (CEGUI_SAMPLES_ENABLED)
     add_subdirectory(Samples)
