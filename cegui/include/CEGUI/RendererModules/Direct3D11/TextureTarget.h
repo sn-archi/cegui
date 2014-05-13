@@ -1,9 +1,10 @@
 /***********************************************************************
-    filename:   CEGUIDirect3D11TextureTarget.h
-    created:    Wed May 5 2010
+    filename:   TextureTarget.h
+    created:    Sun, 6th April 2014
+    author:     Lukas E Meindl
 *************************************************************************/
 /***************************************************************************
- *   Copyright (C) 2004 - 2011 Paul D Turner & The CEGUI Development Team
+ *   Copyright (C) 2004 - 2014 Paul D Turner & The CEGUI Development Team
  *
  *   Permission is hereby granted, free of charge, to any person obtaining
  *   a copy of this software and associated documentation files (the
@@ -53,7 +54,7 @@ public:
     Direct3D11TextureTarget(Direct3D11Renderer& owner);
     virtual ~Direct3D11TextureTarget();
 
-    // overrides from Direct3D10RenderTarget
+    // overrides from the superclass
     void activate();
     void deactivate();
     // implementation of RenderTarget interface
@@ -83,7 +84,7 @@ protected:
     //! switch back to previous surface
     void disableRenderTexture();
 
-    //! Direct3D10 texture that's rendered to.
+    //! The texture that we will render to
     ID3D11Texture2D* d_texture;
     //! render target view for d_texture
     ID3D11RenderTargetView* d_renderTargetView;
